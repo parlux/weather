@@ -1,0 +1,26 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  deploy-frontend:
+    executor:
+      name: node/default
+    steps:
+      - run:
+          name: Setup credentials
+          command: |
+             mkdir ~/.ssh
+             touch ~/.ssh/known_hosts
+             ssh-keyscan paulc.in >> ~/.ssh/known_hosts
+      - checkout
+      - run:
+          name: Build and deploy
+          working_directory: ~/project/frontend
+          command: |
+            npm install
+            ./scripts/synctopi.sh
+
+workflows:
+  deploy:
+    jobs:
+      - deploy-frontend
