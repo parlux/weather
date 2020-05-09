@@ -18,4 +18,5 @@ mkdir ${BUILD_DIR}
 
 # Parse and copy files
 cp index.html style.css build
+cp -r resources build
 sed "s@%API_URL%@${API_URL}@g" app.js > build/app.js
