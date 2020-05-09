@@ -18,6 +18,7 @@ jobs:
           working_directory: ~/project/frontend
           command: |
             npm install
+            npm run build
             ./scripts/synctopi.sh
 
 workflows:

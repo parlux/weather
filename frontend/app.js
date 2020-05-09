@@ -15,7 +15,7 @@
   const NUMBER_OF_LOOP_IMAGES = 5
   const LOOP_SPEED = 300
   const CHECK_FOR_UPDATES = 5
-  const API_URL = 'http://paulc.in/weather-api'
+  const API_URL = '%API_URL%'
   let radarLoop
   let newList
   let list
