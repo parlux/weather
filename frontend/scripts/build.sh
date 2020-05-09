@@ -8,7 +8,7 @@ if [ -f .env ]; then
 fi
 
 # Set any default env variables
-: ${API_URL:='http://paulc.in/weather-api'}
+: ${API_URL:='https://paulc.in/weather-api'}
 
 # Clean and create build dir
 if [ -d ${BUILD_DIR} ]; then
