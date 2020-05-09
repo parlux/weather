@@ -1,0 +1,4 @@
+.vscode
+backend/node_modules
+backend/cached-images
+frontend/node_modules
