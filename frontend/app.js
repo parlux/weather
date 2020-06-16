@@ -24,7 +24,12 @@
     let counter = 0
     radarLoop = setInterval(() => {
       if (counter < (NUMBER_OF_LOOP_IMAGES) && newList.length) {
-        document.querySelector('#radar').src = `${API_URL}${newList[counter].url}`
+        const radarelem = document.querySelector(`#radar${counter}`)
+        document.querySelectorAll('.map__radar').forEach(radarItem => {
+          radarItem.setAttribute('style', 'display: none;')
+        })
+        radarelem.setAttribute('style', 'display: inline-block;')
+        radarelem.src = `${API_URL}${newList[counter].url}`
         document.querySelector('.time').innerHTML = moment(newList[counter].date).format("dddd h:mma")
         
         counter += 1
